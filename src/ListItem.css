@@ -1,0 +1,36 @@
+.list-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 300px;
+  margin: 20px;
+  height: 70px;
+  background-color: #db222a;
+  border-radius: 10px;
+  
+}
+
+.list {
+  display: flex;
+
+  padding: 0 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  color: #ff006e;
+  height: 50px;
+  background-color: #eadeda;
+  border-radius: 5px;
+  width: 80%;
+  align-self: center;
+  box-shadow: 2px 2px 2px 2px inset #632f2f
+}
+
+.list span {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
