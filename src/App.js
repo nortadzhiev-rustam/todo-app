@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 function App() {
   const [items, setItems] = React.useState([]);
   const [currentItem, setCurrentItem] = React.useState({ text: '', key: null });
-  const [status, setStatus] = React.useState('uncompleted');
+  const [status, setStatus] = React.useState();
   const [filteredTodos, setFiltredTodos] = React.useState([]);
 
   React.useEffect(() => {
@@ -13,6 +13,7 @@ function App() {
         localStorage.setItem('items', JSON.stringify([]));
       } else {
         let localTodos = JSON.parse(localStorage.getItem('items'));
+        
         setItems(localTodos);
       }
     };
@@ -36,7 +37,11 @@ function App() {
   React.useEffect(() => {
     const saveLocalTodos = () => {
       localStorage.setItem('items', JSON.stringify(items));
+      localStorage.setItem('status', JSON.stringify(status))
     };
+
+    
+
     filterHandler();
     saveLocalTodos();
   }, [filterHandler, items, status]);
