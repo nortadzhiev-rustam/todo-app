@@ -37,7 +37,7 @@ function App() {
   React.useEffect(() => {
     const saveLocalTodos = () => {
       localStorage.setItem('items', JSON.stringify(items));
-      localStorage.setItem('status', JSON.stringify(status))
+      
     };
 
     
