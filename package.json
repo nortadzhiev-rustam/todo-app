@@ -2,7 +2,6 @@
   "name": "todo-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://nortadzhiev-rustam.github.io/todo-react-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-brands-svg-icons": "^5.15.2",
