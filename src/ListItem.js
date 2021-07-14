@@ -5,22 +5,24 @@ import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import { faSquare } from '@fortawesome/free-regular-svg-icons';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import 'animate.css/animate.css';
+
 const ListItem = (props) => {
   const [isDone, setIsDone] = React.useState(props.item.completed);
   const [isDeleted, setIsDeleted] = React.useState(false);
-  
+
   return (
     <div
       className={
         isDeleted
-          ? 'list-wrapper animate__animated animate__hinge'
+          ? 'list-wrapper animate__animated animate__backOutRight'
           : 'list-wrapper animate__animated animate__backInLeft'
       }
     >
       <div className='list'>
-        <span className='checkbox'>
+        <span className='checkbox animate__animated animate__rubberBand'>
           {' '}
           <FontAwesomeIcon
+            className=''
             color='#2e294e'
             onClick={() => {
               setIsDone(!isDone);
@@ -68,7 +70,7 @@ const ListItem = (props) => {
             setIsDeleted(!isDeleted);
             setTimeout(() => {
               props.deleteItm(props.item.key);
-            }, 2000);
+            }, 500);
           }}
         />
       </span>

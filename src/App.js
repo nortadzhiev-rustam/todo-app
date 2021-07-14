@@ -4,7 +4,7 @@ import ListItem from './ListItem';
 function App() {
   const [items, setItems] = React.useState([]);
   const [currentItem, setCurrentItem] = React.useState({ text: '', key: null });
-  const [status, setStatus] = React.useState();
+  const [status, setStatus] = React.useState('uncompleted');
   const [filteredTodos, setFiltredTodos] = React.useState([]);
 
   React.useEffect(() => {
@@ -13,7 +13,7 @@ function App() {
         localStorage.setItem('items', JSON.stringify([]));
       } else {
         let localTodos = JSON.parse(localStorage.getItem('items'));
-        
+
         setItems(localTodos);
       }
     };
@@ -37,10 +37,7 @@ function App() {
   React.useEffect(() => {
     const saveLocalTodos = () => {
       localStorage.setItem('items', JSON.stringify(items));
-      
     };
-
-    
 
     filterHandler();
     saveLocalTodos();
@@ -127,18 +124,18 @@ function App() {
           </div>
         </form>
         <hr style={{ backgroundColor: 'white' }} />
-        {filteredTodos.map((item) => {
-          return (
-            <ListItem
-              key={item.key}
-              item={item}
-              deleteItm={deleteItem}
-              updateItem={setUpdate}
-              setCompleted={setCompleted}
-            />
-          );
-        })}
       </header>
+      {filteredTodos.map((item) => {
+        return (
+          <ListItem
+            key={item.key}
+            item={item}
+            deleteItm={deleteItem}
+            updateItem={setUpdate}
+            setCompleted={setCompleted}
+          />
+        );
+      })}
     </div>
   );
 }

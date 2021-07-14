@@ -4,16 +4,16 @@ body {
 
 .App {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: #023047;
   min-height: 500px;
-  width: 520px;
+  
   margin: 40px auto;
   margin-top: 200px;
-  
+  width: 600px;
 }
 
-#to-do-form{
+#to-do-form {
   display: flex;
   justify-content: space-around;
   align-items: center;
