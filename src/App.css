@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   background-color: #023047;
   min-height: 500px;
-  
+  overflow: hidden;
   margin: 40px auto;
   margin-top: 200px;
   width: 600px;
